@@ -163,17 +163,17 @@
 
     /* Scroll Down Indicator */
     .scroll-down {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 40px;
-      z-index: 10;
-      opacity: 0.8;
-      transition: all 0.3s ease;
-      animation: float 2s infinite ease-in-out;
-      cursor: pointer;
+        position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* width: 40px; */
+    /* height: 40px; */
+    z-index: 10;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    animation: float 2s infinite ease-in-out;
+    cursor: pointer;
     }
 
     .scroll-down:hover {
@@ -671,8 +671,7 @@
       
       .scroll-down {
         bottom: 20px;
-        width: 30px;
-        height: 30px;
+     
       }
     }
   </style>
@@ -719,7 +718,10 @@
     <div class="hero-logo">MARKO FILIP</div>
     <!-- Scroll Down Indicator -->
     <a href="#companies" class="scroll-down">
-      <img src="https://images.squarespace-cdn.com/content/v1/5ddfc17ecfe3303ffc07d88c/1590314650764-7DRUHYORGFMZH58SGKOF/chevron-down-white.gif" alt="Scroll Down" width="40" height="40">
+      <img style="
+      min-width: 100px;
+      height: auto;
+  " src="https://images.squarespace-cdn.com/content/v1/5ddfc17ecfe3303ffc07d88c/1590314650764-7DRUHYORGFMZH58SGKOF/chevron-down-white.gif" alt="Scroll Down" width="40" height="40">
     </a>
   </section>
   
