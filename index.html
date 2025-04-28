@@ -8,7 +8,7 @@
 <meta name="keywords" content="Marko Filipovic, Marko Filip, Marko Filipovic Austria, Marko Filip Austria, Marko Filipovic Graz, Marko Filip Graz, Marko Filipovic Unternehmen, Marko Filip Unternehmen, Marko Filipovic Business, Marko Filip Business, Marko Filipovic Entrepreneur, Marko Filip Entrepreneur, Marko Filipovic Villach, Marko Filip Villach, Familie Filipovic, Filipovic Austria, Filipovic Familie, Österreich Entrepreneur, Österreich Businessman, International Creator, International Business Man, International Agency, Agentur Inhaber, International Entrepreneur, Austrian Business Owner, Graz Entrepreneur, Villach Entrepreneur, Villach Business Owner, Graz Businessman, Vienna Entrepreneur, Vienna Business, Austrian Agency Owner, Marko Filipovic Agency, Marko Filip Agency, Final Chapter Agency, Celestius Brand, FearedPath Agency, Scale Distribution, Digital Challenges, Austrian CEO, European Entrepreneur, European Business Leader, International Founder, Company Builder, Online Educator, Motivational Speaker, Philanthropist, Austrian Creator, Austrian Marketer, Business Scale Expert, Brand Scaling Expert, E-Commerce Founder, Digital Agency Founder, Creator Economy Expert, Influencer Entrepreneur, International Company Founder, Digital Product Creator, International Speaker, Austrian Influencer, Personal Branding Expert, Startup Founder Austria, Graz Startup, Villach Startup, Vienna Startup, Marko Filipovic Digital Assets, FinalChapter, FearedPath, Celestius Company, Austrian Digital Economy, Marko Filipovic Brands, Marko Filip Projects, Business Owner Austria, International Ventures, International Business Projects, E-Commerce Expert, Content Automation, Content Agency, Business Scaling Austria, Europe Business Growth, Graz Business Leader, Villach Businessman, Austrian Startup Scene, Marko Filipovic Founder, Marko Filip Founder, Austrian Online Businesses, Austrian Entrepreneurs, Austrian Innovators, International Scale Expert, Global Entrepreneur, Business Expansion Expert, Brand Automation Specialist, Digital Growth Expert, Young Entrepreneur Austria, Austria's Business Scene, Austria Business Network, Austrian Agency Owner, Austrian Marketer, Brand Strategist Austria, Growth Hacker Austria, Company Expansion Austria, Villach Business, Graz Business, Vienna Business, Business Consultant Austria, Agency Consultant Austria, Entrepreneurial Visionary, International Deal Maker, Austrian Global Leader, Austrian Business Scaling, Entrepreneurship in Austria, Europe Business Expansion, Austria Global Business, International Consultant Austria, Founder of Agencies, Digital World Leader, Ecom Growth Expert, Content Creation Leader, Business Domination Strategist, Strategic Brand Builder, Startup Accelerator Austria, Europe Agency Leader, Austrian Visionary Leader, Austrian Business Strategist, Graz Startup Scene, Villach Startup Leader, Vienna Startup Founder, Content Growth Expert, Content Automation Innovator, Austrian Scale Expert, Startup Scaling Specialist, International Business Strategist, Marko Filip Creator, Digital Agency Austria, Online Entrepreneur Austria, Graz Business Owner, Villach Business Expert, FinalChapter Growth, FearedPath Academy, Celestius Company, Global Business Innovator, Austrian Innovation Leader, Austrian Business Excellence, European Business Domination, Marko Filipovic School Projects, International Impact Entrepreneur, Austria's New Generation Entrepreneur, Austrian Success Story, Austrian Online Growth, Europe Scale Expert, Marko Filip Venture Capital, Marko Filipovic Brand Builder, International Network Builder, Austrian Leader in Business, European Digital Agency Leader, Austrian Digital Growth Expert, Austrian Entrepreneurial Journey, Villach Leader, Graz Leader, Marko Filipovic Success Story, Young Business Leader Austria, Austria Business Empire, Entrepreneur Coach Austria, Austria Business Advisor, Austrian Company Builder, Startup Mentor Austria, Entrepreneurial Agency Austria">
 
 <meta name="description" content="Marko Filipovic, also known as Marko Filip, is an Austrian entrepreneur, international creator, businessman, and agency owner based in Graz, Villach, and Vienna. Explore Marko Filipovic's companies, achievements, and international business ventures.">
-<meta name="keywords" content="Marko Filipovic, Marko Filip, Marko Filipovic Austria, Marko Filip Austria, Marko Filipovic Graz, Marko Filip Graz, Marko Filipovic Unternehmen, ... (continues) ...">
+<meta name="keywords" content="Marko Filipovic, Marko Filip, Marko Filipovic Austria, Marko Filip Austria, Marko Filipovic Graz, ... (continues) ...">
 
 
   <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0939/4097/3900/files/image_237.png?v=1745854417">
@@ -33,6 +33,8 @@
       --spacing-lg: 40px;
       --spacing-xl: 80px;
       --container-width: 1200px;
+      --animation-duration: 0.8s;
+      --animation-delay-base: 0.1s;
     }
 
     * {
@@ -51,6 +53,8 @@
       color: var(--text-light);
       line-height: 1.6;
       overflow-x: hidden;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
     }
 
     img  { max-width: ;}
@@ -72,11 +76,14 @@
       padding: 20px 0;
       background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0));
       transition: var(--transition-standard);
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: slideDown 0.8s ease forwards;
+      animation-delay: 0.3s;
     }
 
     .header.scrolled {
       background: linear-gradient(180deg, black, transparent);
-  
     }
 
     .nav-container {
@@ -101,6 +108,25 @@
       padding: 1.3rem 1.9rem;
       font-weight: 400;
       letter-spacing: 1px;
+      opacity: 0;
+      transform: translateY(-10px);
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .nav-left a:nth-child(1) {
+      animation-delay: 0.4s;
+    }
+
+    .nav-left a:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .nav-right a:nth-child(1) {
+      animation-delay: 0.6s;
+    }
+
+    .nav-right a:nth-child(2) {
+      animation-delay: 0.7s;
     }
 
     .nav-links a:hover {
@@ -123,6 +149,8 @@
       color: transparent;
       -webkit-text-fill-color: transparent;
       animation: sweep 3.5s infinite ease-in-out;
+      opacity: 0;
+      animation: sweep 3.5s infinite ease-in-out, fadeIn 1s ease forwards 0.2s;
     }
 
     /* Hero Section */
@@ -147,43 +175,46 @@
       object-fit: cover;
       object-position: center;
       display: block;
+      opacity: 0;
+      transform: scale(1.1);
+      animation: heroImageReveal 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
 
     .hero-logo {
-        position: absolute;
-    top: 74%;
-    left: 52%;
-    transform: translate(-50%, -50%);
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 10vw, 6rem);
-    letter-spacing: clamp(2rem, 8vw, 6rem);
-    font-weight: 100;
-    background: linear-gradient(90deg, #d9d9d9, #000000f7);
-    background-size: 200% auto;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: lightgray;
-    animation: sweep 3.5s infinite ease-in-out;
-    mix-blend-mode: screen;
-    pointer-events: none;
-    white-space: nowrap;
-    text-align: center;
-    padding: 0 var(--spacing-md);
+      position: absolute;
+      top: 74%;
+      left: 52%;
+      transform: translate(-50%, -50%);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 10vw, 6rem);
+      letter-spacing: clamp(2rem, 8vw, 6rem);
+      font-weight: 100;
+      background: linear-gradient(90deg, #d9d9d9, #000000f7);
+      background-size: 200% auto;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: lightgray;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      white-space: nowrap;
+      text-align: center;
+      padding: 0 var(--spacing-md);
+      opacity: 0;
+      transform: translate(-50%, -30%);
+      animation: heroTextReveal 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.8s, sweep 3.5s infinite ease-in-out 2s;
     }
 
     /* Scroll Down Indicator */
     .scroll-down {
-        position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    /* width: 40px; */
-    /* height: 40px; */
-    z-index: 10;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-    animation: float 2s infinite ease-in-out;
-    cursor: pointer;
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      opacity: 0;
+      transition: all 0.3s ease;
+      animation: float 2s infinite ease-in-out, fadeIn 1s ease forwards 1.5s;
+      cursor: pointer;
     }
 
     .scroll-down:hover {
@@ -203,6 +234,7 @@
     /* Section Styles */
     .section {
       padding: var(--spacing-xl) var(--spacing-md);
+      position: relative;
     }
 
     .section-title {
@@ -211,6 +243,14 @@
       text-transform: uppercase;
       font-size: clamp(1.5rem, 5vw, 1.5rem);
       letter-spacing: 2px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .section-title.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Company Section */
@@ -229,6 +269,14 @@
       width: 100%;
       justify-content: center;
       margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .company-row.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .company-links {
@@ -272,6 +320,11 @@
       overflow: visible; /* Allow images to overflow */
     }
 
+    .cta-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .cta-images {
       flex: 1;
       min-width: 250px;
@@ -300,45 +353,55 @@
       top: -40px;
       transform: translateY(50px) rotate(-8deg);
       z-index: 2;
+    }
+
+    .cta-item.visible:nth-child(odd) .cta-img:first-child {
       animation: fadeInLeft 0.8s ease forwards;
       animation-delay: 0.2s;
     }
 
     .cta-item:nth-child(even) .cta-img:first-child {
-        right: 120px;
+      right: 120px;
       top: -40px;
       transform: translateY(50px) rotate(8deg);
       z-index: 2;
+    }
+
+    .cta-item.visible:nth-child(even) .cta-img:first-child {
       animation: fadeInRight 0.8s ease forwards;
       animation-delay: 0.2s;
     }
 
     /* Second image in each CTA item */
     .cta-item:nth-child(odd) .cta-img:nth-child(2) {
-        right: 30px;
-        top: 70px;
+      right: 30px;
+      top: 70px;
       transform: translateY(50px) rotate(8deg);
       z-index: 1;
+    }
+
+    .cta-item.visible:nth-child(odd) .cta-img:nth-child(2) {
       animation: fadeInRight 0.8s ease forwards;
       animation-delay: 0.4s;
     }
 
     .cta-item:nth-child(even) .cta-img:nth-child(2) {
-        right: 30px;
-        top: 70px;
+      right: 30px;
+      top: 70px;
       transform: translateY(50px) rotate(-8deg);
       z-index: 1;
+    }
+
+    .cta-item.visible:nth-child(even) .cta-img:nth-child(2) {
       animation: fadeInLeft 0.8s ease forwards;
       animation-delay: 0.4s;
     }
 
     .cta-img:hover {
-        .cta-img:hover {
-  transform: translateY(-10px) scale(1.03) rotate(0) !important;
-  z-index: 3;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.7);
-  transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
-}
+      transform: translateY(-10px) scale(1.03) rotate(0) !important;
+      z-index: 3;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+      transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
     }
 
     @keyframes fadeInLeft {
@@ -369,6 +432,15 @@
       color: var(--text-light);
       font-size: 16px;
       line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition-delay: 0.3s;
+    }
+
+    .cta-item.visible .cta-text {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .cta-text h3 {
@@ -383,9 +455,15 @@
       position: absolute;
       bottom: -8px;
       left: 0;
-      width: 60px;
+      width: 0;
       height: 2px;
       background: linear-gradient(90deg, var(--text-light), transparent);
+      transition: width 0.8s ease;
+    }
+
+    .cta-item.visible .cta-text h3:after {
+      width: 60px;
+      transition-delay: 0.6s;
     }
 
     /* Company Grid */
@@ -394,6 +472,14 @@
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 30px;
       margin-top: var(--spacing-lg);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .company-grid.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .company-card {
@@ -404,7 +490,22 @@
       text-align: center;
       transition: var(--transition-standard);
       border: 1px solid var(--border-subtle);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
+
+    .company-grid.visible .company-card {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .company-grid.visible .company-card:nth-child(1) { transition-delay: 0.1s; }
+    .company-grid.visible .company-card:nth-child(2) { transition-delay: 0.2s; }
+    .company-grid.visible .company-card:nth-child(3) { transition-delay: 0.3s; }
+    .company-grid.visible .company-card:nth-child(4) { transition-delay: 0.4s; }
+    .company-grid.visible .company-card:nth-child(5) { transition-delay: 0.5s; }
+    .company-grid.visible .company-card:nth-child(6) { transition-delay: 0.6s; }
 
     .company-card:hover {
       transform: translateY(-10px);
@@ -437,6 +538,14 @@
     .contact-form {
       text-align: center;
       margin-bottom: var(--spacing-xl);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .contact-form.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .contact-content-wrapper {
@@ -449,6 +558,15 @@
       border-radius: var(--border-radius-md);
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition-delay: 0.3s;
+    }
+
+    .contact-form.visible .typeform-wrapper {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Footer */
@@ -458,6 +576,14 @@
       color: var(--text-muted);
       text-align: center;
       font-size: 12px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    footer.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     footer p {
@@ -494,16 +620,65 @@
       100% { background-position: 0% 50%; }
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from { 
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heroImageReveal {
+      0% {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes heroTextReveal {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -30%);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
     /* Mobile Menu */
     .mobile-menu-toggle {
-        margin-right: 5px;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 21px;
-    height: 17px;
-    cursor: pointer;
-    z-index: 1001;
+      margin-right: 5px;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 21px;
+      height: 17px;
+      cursor: pointer;
+      z-index: 1001;
     }
 
     .mobile-menu-toggle span {
@@ -542,7 +717,18 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       transition: var(--transition-standard);
+      opacity: 0;
+      transform: translateY(20px);
     }
+
+    .mobile-menu.active a {
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .mobile-menu.active a:nth-child(1) { animation-delay: 0.1s; }
+    .mobile-menu.active a:nth-child(2) { animation-delay: 0.2s; }
+    .mobile-menu.active a:nth-child(3) { animation-delay: 0.3s; }
+    .mobile-menu.active a:nth-child(4) { animation-delay: 0.4s; }
 
     .mobile-menu a:hover {
       transform: translateY(-5px);
@@ -576,6 +762,10 @@
         left: 80px;
         top: 41px;
         transform: translateY(0) rotate(-8deg);
+      }
+      
+      .cta-item.visible:nth-child(odd) .cta-img:first-child,
+      .cta-item.visible:nth-child(even) .cta-img:first-child {
         animation: fadeInTop 0.8s ease forwards;
         animation-delay: 0.2s;
       }
@@ -585,6 +775,10 @@
         right: 65px;
         top: 13px;
         transform: translateY(0) rotate(8deg);
+      }
+      
+      .cta-item.visible:nth-child(odd) .cta-img:nth-child(2),
+      .cta-item.visible:nth-child(even) .cta-img:nth-child(2) {
         animation: fadeInTop 0.8s ease forwards;
         animation-delay: 0.4s;
       }
@@ -695,56 +889,56 @@
 
 
     @media (max-width: 480px) {
-  /* Fix CTA images on mobile */
-  .cta-images {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    gap: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+      /* Fix CTA images on mobile */
+      .cta-images {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        gap: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
 
-  .cta-img {
-    position: relative;
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform: none !important;
-    animation: none !important;
-    opacity: 1 !important;
-  }
+      .cta-img {
+        position: relative;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: none !important;
+        animation: none !important;
+        opacity: 1 !important;
+      }
 
-  .cta-item {
-    align-items: center;
-  }
-}
+      .cta-item {
+        align-items: center;
+      }
+    }
 
-.company-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem; /* Adjust spacing between rows */
-}
+    .company-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem; /* Adjust spacing between rows */
+    }
 
-.company-row {
-  display: flex;
-  gap: 2rem; /* Adjust spacing between logos */
-}
+    .company-row {
+      display: flex;
+      gap: 2rem; /* Adjust spacing between logos */
+    }
 
-.company-links img {
-  max-width: 150px; /* or whatever size you want */
-  height: auto;
-}
+    .company-links img {
+      max-width: 150px; /* or whatever size you want */
+      height: auto;
+    }
 
-/* Center the second row (with only 2 logos) */
-.center-row {
-  justify-content: center;
-}
+    /* Center the second row (with only 2 logos) */
+    .center-row {
+      justify-content: center;
+    }
 
   </style>
 </head>
@@ -783,19 +977,14 @@
   </div>
   
   <!-- Hero Section -->
-  <section class="hero" style="
-  margin-top: -70px;
-">
+  <section class="hero" style="margin-top: -70px;">
     <div class="image-container">
       <img src="https://cdn.shopify.com/s/files/1/0939/4097/3900/files/Group_217_2.png?v=1745844575" alt="Marko Filip Hero Image">
     </div>
     <div class="hero-logo"><span style="font-style: italic;letter-spacing: 24px;">MARKO</span> FILIP</div>
     <!-- Scroll Down Indicator -->
     <a href="#companies" class="scroll-down">
-      <img style="
-      min-width: 100px;
-      height: auto;
-  " src="https://images.squarespace-cdn.com/content/v1/5ddfc17ecfe3303ffc07d88c/1590314650764-7DRUHYORGFMZH58SGKOF/chevron-down-white.gif" alt="Scroll Down" width="40" height="40">
+      <img style="min-width: 100px; height: auto;" src="https://images.squarespace-cdn.com/content/v1/5ddfc17ecfe3303ffc07d88c/1590314650764-7DRUHYORGFMZH58SGKOF/chevron-down-white.gif" alt="Scroll Down" width="40" height="40">
     </a>
   </section>
   
@@ -856,7 +1045,7 @@
                 <div class="cta-text">
                     <h3>Early Life</h3>
                     <p><b>Born in Europe, Marko Filip faced a wide range of challenges from an early age.</b><br><br>
-                    By just 11 years old, he was already creating digital assets for some of the world’s leading e-sports organizations, including FaZe, Obey, and SoaR.<br><br>
+                    By just 11 years old, he was already creating digital assets for some of the world's leading e-sports organizations, including FaZe, Obey, and SoaR.<br><br>
                     His early experiences forged a strong foundation of creativity, resilience, and entrepreneurial spirit that would define his future trajectory.</p>
                 </div>
             </div>
@@ -984,25 +1173,45 @@
   
   <!-- Scripts -->
   <script>
-    // Intersection Observer for animations
-    const observer = new IntersectionObserver(entries => {
+    // Enhanced Intersection Observer for animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.2
+    };
+    
+    const handleIntersect = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = "translateY(0)";
-          
-          // Find and trigger image animations when container is visible
-          const images = entry.target.querySelectorAll('.cta-img');
-          images.forEach((img, index) => {
-            img.style.opacity = 1;
-          });
-          
+          entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
+    };
     
-    document.querySelectorAll('.cta-item').forEach(el => observer.observe(el));
+    // Create the observer
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    
+    // Observe all elements that should animate on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      // Observe section titles
+      document.querySelectorAll('.section-title').forEach(el => observer.observe(el));
+      
+      // Observe CTA items
+      document.querySelectorAll('.cta-item').forEach(el => observer.observe(el));
+      
+      // Observe company grid
+      document.querySelectorAll('.company-grid').forEach(el => observer.observe(el));
+      
+      // Observe company rows
+      document.querySelectorAll('.company-row').forEach(el => observer.observe(el));
+      
+      // Observe contact form
+      document.querySelectorAll('.contact-form').forEach(el => observer.observe(el));
+      
+      // Observe footer
+      document.querySelectorAll('footer').forEach(el => observer.observe(el));
+    });
     
     // Header scroll effect
     window.addEventListener('scroll', function() {
@@ -1011,6 +1220,21 @@
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
+      }
+    });
+    
+    // Parallax effect for hero image
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY;
+      const heroImage = document.querySelector('.image-container img');
+      const heroLogo = document.querySelector('.hero-logo');
+      
+      if (scrollPosition <= window.innerHeight) {
+        // Parallax for hero image - moves slightly slower than scroll
+        heroImage.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+        
+        // Parallax for hero logo - moves slightly faster for contrast
+        heroLogo.style.transform = `translate(-50%, -50%) translateY(${scrollPosition * 0.3}px)`;
       }
     });
     
@@ -1043,29 +1267,36 @@
       });
     });
     
-    // Smooth scroll for the chevron down arrow
-    document.querySelector('.scroll-down').addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop,
-          behavior: 'smooth'
-        });
-      }
+    // Smooth scroll for the chevron down arrow and all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Offset for header
+            behavior: 'smooth'
+          });
+        }
+      });
     });
+    
+    // Preload images for smoother animations
+    function preloadImages() {
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        const src = img.getAttribute('src');
+        if (src) {
+          const newImg = new Image();
+          newImg.src = src;
+        }
+      });
+    }
+    
+    // Run preload on page load
+    window.addEventListener('load', preloadImages);
   </script>
 </body>
 </html>
-
-<Actions>
-  <Action name="Add parallax scrolling" description="Implement parallax scrolling effect for the hero section" />
-  <Action name="Add image gallery" description="Create an interactive image gallery with the 3D effect" />
-  <Action name="Add scroll animations" description="Add more scroll-triggered animations to other elements" />
-  <Action name="Add dark/light mode toggle" description="Implement a theme switcher for the landing page" />
-  <Action name="Add preloading" description="Implement image preloading for smoother animations" />
-</Actions>
-
-
